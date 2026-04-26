@@ -90,7 +90,7 @@ export default function DocumentsPage() {
               >
                 {/* Decorative background icon */}
                 <div className="absolute -right-8 -bottom-8 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-500">
-                  <FileText size={150} md={200} />
+                  <FileText className="w-[150px] h-[150px] md:w-[200px] md:h-[200px]" />
                 </div>
 
                 <div className="flex items-start justify-between mb-6 md:mb-8">

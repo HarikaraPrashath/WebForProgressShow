@@ -26,10 +26,10 @@ export default function AboutPage() {
     },
     {
       name: "Thah ATRS",
-      email: "Thah ATRS@demo.edu",
-      role: "Systems Analyst",
-      skills: "Requirement Analysis, Testing, Documentation",
-      achievements: "Prepared project specifications",
+      email: "rahufath.shajeeh52@gmail.com",
+      role: "Internship ",
+      skills: "HTML, CSS, JavaScript, Java, C languages, PHP, MySQL, C++, Python",
+      achievements: "AWS Cloud Computing Courses, Azure Cloud Computing Courses",
       image: "/Thaha.png"
     },
   ];
@@ -47,7 +47,7 @@ export default function AboutPage() {
             Our multi-disciplinary team brings together expertise in Machine Learning, Data Engineering, and Modern Web Development.
           </p>
         </div>
-
+        {/* show member details here */}
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-2">
           {members.map((member) => (
             <article

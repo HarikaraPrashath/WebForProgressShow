@@ -13,14 +13,14 @@ const milestones = [
     title: "Project Proposal",
     date: "2025/09/10",
     status: "completed",
-    marks: "Pending",
+    marks: "Average",
     comments: "Research proposal has been successfully submitted and reviewed by the internal committee."
   },
   {
     title: "Progress Presentation 1",
     date: "2026/01/05",
     status: "completed",
-    marks: "Pending",
+    marks: "Average",
     comments: "Preparing for the first progress review focusing on the literature survey and initial architecture."
   },
   {

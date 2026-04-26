@@ -14,7 +14,7 @@ export default function AboutPage() {
       role: "Software Engineer",
       skills: "JavaScript, TypeScript, Java, C, C++, Kotlin, Python",
       achievements: "Built AI-based Virtual Try-On system using OpenCV,Hands-on experience with ROS 2",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop"
+      image: "/diven.jpeg"
     },
     {
       name: "Shangave",

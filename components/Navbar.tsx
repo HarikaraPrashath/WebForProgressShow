@@ -78,37 +78,31 @@ export function Navbar() {
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* Mobile Navigation Overlay */}
-        <div
-          className={`fixed inset-0 z-40 flex flex-col md:hidden bg-black backdrop-blur-none
-    transition-transform duration-500 ease-in-out
-    ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}
-  `}
-          style={{ backgroundColor: '#000' }}
-        >
-          <div className="flex flex-col items-center justify-center flex-1 gap-8 px-6 pt-20">
-            {navLinks.map((link, index) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`text-2xl font-bold transition-all ${isActive ? 'text-[var(--accent)] scale-110' : 'text-white/80 hover:text-white'
-                    }`}
-                  style={{ transitionDelay: `${index * 50}ms` }}
-                >
-                  {link.name}
-                </Link>
-              );
-            })}
+        {/* Mobile Navigation Menu */}
+        {isMobileMenuOpen && (
+          <div className="absolute left-0 top-full z-40 w-full md:hidden">
+            <div className="mx-4 mt-4 rounded-2xl border border-[var(--border)] bg-[var(--panel)] shadow-xl">
+              <div className="flex flex-col py-3">
+                {navLinks.map((link) => {
+                  const isActive = pathname === link.href;
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className={`px-5 py-3 text-base font-semibold transition-colors ${
+                        isActive
+                          ? 'text-[var(--accent)]'
+                          : 'text-[var(--ink)] hover:text-[var(--accent)]'
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
           </div>
-
-          <div className="p-10 border-t border-white/10 bg-white/5">
-            <p className="text-center text-sm text-white/40">
-              © {new Date().getFullYear()} Mentora Career Guidance
-            </p>
-          </div>
-        </div>
+        )}
       </div>
     </header>
   );

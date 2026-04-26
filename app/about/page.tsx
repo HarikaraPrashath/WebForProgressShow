@@ -47,7 +47,7 @@ export default function AboutPage() {
             Our multi-disciplinary team brings together expertise in Machine Learning, Data Engineering, and Modern Web Development.
           </p>
         </div>
-        {/* show member details here */}
+        {/* show member details here show like mapping */}
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-2">
           {members.map((member) => (
             <article

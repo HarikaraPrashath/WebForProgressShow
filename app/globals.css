@@ -3,6 +3,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --page-bg: #eef3ff;
+  --ink: #12182a;
+  --muted: #5b6785;
+  --accent: #2e5bff;
+  --accent-2: #7a4bff;
+  --panel: #ffffff;
+  --border: #d7def4;
+  --gold: #a3b9ff;
+  --sage: #c8d4ff;
+  --ink-soft: #1a2238;
 }
 
 @theme inline {
@@ -16,11 +26,62 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --page-bg: #0b1020;
+    --ink: #eff2ff;
+    --muted: #a4b0d4;
+    --accent: #4d7bff;
+    --accent-2: #9a6bff;
+    --panel: #141a33;
+    --border: #243056;
+    --gold: #7aa2ff;
+    --sage: #6f86ff;
+    --ink-soft: #dbe3ff;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--page-bg);
+  color: var(--ink);
+  font-family: var(--font-geist-sans);
+}
+
+.page-ambient {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(900px circle at 10% 10%, rgba(46, 91, 255, 0.2), transparent 60%),
+    radial-gradient(820px circle at 85% 15%, rgba(122, 75, 255, 0.22), transparent 60%),
+    radial-gradient(640px circle at 30% 80%, rgba(120, 160, 255, 0.18), transparent 55%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(238, 243, 255, 0.35) 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .page-ambient {
+    background:
+      radial-gradient(900px circle at 10% 10%, rgba(77, 123, 255, 0.3), transparent 60%),
+      radial-gradient(820px circle at 85% 15%, rgba(154, 107, 255, 0.3), transparent 60%),
+      radial-gradient(640px circle at 30% 80%, rgba(90, 128, 255, 0.2), transparent 55%),
+      linear-gradient(180deg, rgba(11, 16, 32, 0.95) 0%, rgba(11, 16, 32, 0.65) 100%);
+  }
+}
+
+.theme-card {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.75)),
+    radial-gradient(180px circle at 15% 10%, rgba(46, 91, 255, 0.18), transparent 60%),
+    radial-gradient(220px circle at 85% 20%, rgba(122, 75, 255, 0.18), transparent 60%);
+  border: 1px solid var(--border);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  .theme-card {
+    background:
+      linear-gradient(135deg, rgba(20, 26, 51, 0.98), rgba(20, 26, 51, 0.7)),
+      radial-gradient(180px circle at 15% 10%, rgba(77, 123, 255, 0.22), transparent 60%),
+      radial-gradient(220px circle at 85% 20%, rgba(154, 107, 255, 0.22), transparent 60%);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+  }
 }

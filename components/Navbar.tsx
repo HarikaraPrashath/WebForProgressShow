@@ -1,6 +1,21 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export function Navbar() {
+  const pathname = usePathname();
+
+  const navLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'Domain', href: '/domain' },
+    { name: 'Milestones', href: '/milestones' },
+    { name: 'Documents', href: '/documents' },
+    { name: 'Presentation', href: '/presentation' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
+  ];
+
   return (
     <header className="sticky top-0 z-20 border-b border-[var(--border)] bg-[color-mix(in_srgb,var(--page-bg)_92%,transparent)] backdrop-blur relative">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-6 px-6 py-5">
@@ -14,13 +29,20 @@ export function Navbar() {
         </div>
 
         <nav className="hidden items-center gap-6 text-sm font-medium text-[var(--muted)] md:flex">
-          <Link className="text-[var(--ink)] transition-colors hover:text-[var(--accent)]" href="/">Home</Link>
-          <Link className="transition-colors hover:text-[var(--accent)]" href="/domain">Domain</Link>
-          <Link className="transition-colors hover:text-[var(--accent)]" href="/milestones">Milestones</Link>
-          <Link className="transition-colors hover:text-[var(--accent)]" href="/documents">Documents</Link>
-          <Link className="transition-colors hover:text-[var(--accent)]" href="/presentation">Presentation</Link>
-          <Link className="transition-colors hover:text-[var(--accent)]" href="/about">About</Link>
-          <Link className="transition-colors hover:text-[var(--accent)]" href="/contact">Contact</Link>
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`transition-colors hover:text-[var(--accent)] ${
+                  isActive ? 'text-[var(--accent)] font-semibold border-b-2 border-[var(--accent)] pb-1' : 'text-[var(--muted)]'
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </nav>
       </div>
     </header>

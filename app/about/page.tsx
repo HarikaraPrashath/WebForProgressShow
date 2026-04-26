@@ -35,28 +35,28 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen py-24 px-6 relative">
+    <div className="min-h-screen py-16 md:py-24 px-4 md:px-6 relative overflow-hidden">
       <div className="page-ambient" />
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-24">
-          <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tight">
+        <div className="text-center mb-16 md:mb-24">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-black mb-6 md:mb-8 tracking-tight">
             Meet the <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] bg-clip-text text-transparent">Team</span>
           </h1>
-          <p className="text-[var(--muted)] text-xl max-w-2xl mx-auto">
+          <p className="text-base md:text-xl text-[var(--muted)] max-w-2xl mx-auto leading-relaxed">
             Our multi-disciplinary team brings together expertise in Machine Learning, Data Engineering, and Modern Web Development.
           </p>
         </div>
-        {/* show member details here show like mapping */}
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-2">
+
+        <div className="grid gap-8 md:gap-12 sm:grid-cols-2">
           {members.map((member) => (
             <article
               key={member.email}
-              className="group rounded-[3rem] border border-[var(--border)] bg-[var(--panel)] p-8 shadow-xl hover:shadow-2xl hover:shadow-[var(--accent)]/5 hover:-translate-y-2 transition-all duration-500 overflow-hidden relative"
+              className="group rounded-[2rem] md:rounded-[3rem] border border-[var(--border)] bg-[var(--panel)] p-6 md:p-8 shadow-xl hover:shadow-2xl hover:shadow-[var(--accent)]/5 md:hover:-translate-y-2 transition-all duration-500 overflow-hidden relative"
             >
-              <div className="flex flex-col md:flex-row gap-10 items-center md:items-start">
+              <div className="flex flex-col md:flex-row gap-8 md:gap-10 items-center md:items-start">
                 <div className="shrink-0">
-                  <div className="w-48 h-48 rounded-[2.5rem] overflow-hidden border-4 border-white shadow-2xl group-hover:scale-105 transition-transform duration-500">
+                  <div className="w-40 h-40 md:w-48 md:h-48 rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden border-4 border-white shadow-2xl group-hover:scale-105 transition-transform duration-500">
                     <img
                       src={member.image}
                       alt={member.name}
@@ -65,27 +65,27 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                <div className="flex-1">
+                <div className="flex-1 text-center md:text-left">
                   <div className="inline-block px-4 py-1.5 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-[10px] font-black uppercase tracking-widest mb-4">
                     {member.role}
                   </div>
 
-                  <h3 className="text-3xl font-black mb-6 tracking-tight group-hover:text-[var(--accent)] transition-colors">
+                  <h3 className="text-2xl md:text-3xl font-black mb-4 md:mb-6 tracking-tight group-hover:text-[var(--accent)] transition-colors">
                     {member.name}
                   </h3>
 
-                  <ul className="space-y-4">
+                  <ul className="space-y-4 text-left">
                     <li className="flex flex-col">
                       <span className="text-[10px] font-black uppercase tracking-widest text-[var(--muted)] mb-1">Email</span>
-                      <span className="text-[var(--ink)] font-medium text-sm">{member.email}</span>
+                      <span className="text-[var(--ink)] font-medium text-xs md:text-sm break-all">{member.email}</span>
                     </li>
                     <li className="flex flex-col">
                       <span className="text-[10px] font-black uppercase tracking-widest text-[var(--muted)] mb-1">Key Expertise</span>
-                      <span className="text-[var(--ink)] font-medium text-sm">{member.skills}</span>
+                      <span className="text-[var(--ink)] font-medium text-xs md:text-sm">{member.skills}</span>
                     </li>
                     <li className="flex flex-col">
                       <span className="text-[10px] font-black uppercase tracking-widest text-[var(--muted)] mb-1">Core Achievement</span>
-                      <span className="text-[var(--ink)] font-medium text-sm">{member.achievements}</span>
+                      <span className="text-[var(--ink)] font-medium text-xs md:text-sm">{member.achievements}</span>
                     </li>
                   </ul>
                 </div>
@@ -100,3 +100,4 @@ export default function AboutPage() {
     </div>
   );
 }
+

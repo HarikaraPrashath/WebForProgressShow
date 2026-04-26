@@ -266,11 +266,11 @@ export default function DomainPage() {
     <div className="min-h-screen py-20 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className="text-3xl md:text-5xl font-bold mb-4"
           >
             Research <span className="text-[var(--accent)]">Domains</span>
           </motion.h1>
@@ -278,29 +278,29 @@ export default function DomainPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-[var(--muted)] text-lg max-w-2xl mx-auto"
+            className="text-[var(--muted)] text-base md:text-lg max-w-2xl mx-auto"
           >
             Detailed research breakdown for each domain expert and their respective focus areas.
           </motion.p>
         </div>
 
         {/* Tab Switcher */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12 p-2 bg-[var(--panel)]/50 backdrop-blur-md border border-[var(--border)] rounded-3xl w-fit mx-auto shadow-xl">
+        <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-10 md:mb-12 p-1.5 md:p-2 bg-[var(--panel)]/50 backdrop-blur-md border border-[var(--border)] rounded-2xl md:rounded-3xl w-full md:w-fit mx-auto shadow-xl">
           {researchers.map((researcher) => (
             <button
               key={researcher.id}
               onClick={() => setActiveTab(researcher.id)}
-              className={`relative px-8 py-3 rounded-2xl text-sm font-bold transition-all flex items-center gap-2 ${activeTab === researcher.id
+              className={`relative px-4 md:px-8 py-2 md:py-3 rounded-xl md:rounded-2xl text-xs md:text-sm font-bold transition-all flex items-center gap-2 flex-1 md:flex-none justify-center ${activeTab === researcher.id
                   ? "text-white"
                   : "text-[var(--muted)] hover:text-[var(--ink)]"
                 }`}
             >
-              <User className="w-4 h-4" />
+              <User className="w-4 h-4 hidden sm:block" />
               {researcher.name}
               {activeTab === researcher.id && (
                 <motion.div
                   layoutId="activeTab"
-                  className="absolute inset-0 bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] rounded-2xl -z-10 shadow-lg shadow-[var(--accent)]/20"
+                  className="absolute inset-0 bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] rounded-xl md:rounded-2xl -z-10 shadow-lg shadow-[var(--accent)]/20"
                   transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                 />
               )}
@@ -325,7 +325,7 @@ export default function DomainPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 onClick={() => setSelectedSection(section)}
-                className="group p-8 rounded-[2.5rem] bg-[var(--panel)] border border-[var(--border)] shadow-lg hover:shadow-2xl hover:shadow-[var(--accent)]/5 hover:-translate-y-2 transition-all relative overflow-hidden cursor-pointer"
+                className="group p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] bg-[var(--panel)] border border-[var(--border)] shadow-lg hover:shadow-2xl hover:shadow-[var(--accent)]/5 md:hover:-translate-y-2 transition-all relative overflow-hidden cursor-pointer"
               >
                 {/* Background Glow */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[var(--accent)]/10 to-transparent blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -373,7 +373,7 @@ export default function DomainPage() {
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                className="fixed inset-0 m-auto w-full max-w-2xl h-fit max-h-[80vh] bg-[var(--panel)] border border-[var(--border)] rounded-[3rem] p-10 shadow-2xl z-[101] overflow-y-auto"
+                className="fixed inset-4 m-auto w-auto max-w-2xl h-fit max-h-[90vh] bg-[var(--panel)] border border-[var(--border)] rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 shadow-2xl z-[101] overflow-y-auto"
               >
                 <div className="flex items-center justify-between mb-8">
                   <div className="flex items-center gap-4">

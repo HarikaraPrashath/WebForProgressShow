@@ -48,28 +48,28 @@ const presentations = [
 
 export default function PresentationPage() {
   return (
-    <div className="min-h-screen py-24 px-6 relative">
+    <div className="min-h-screen py-16 md:py-24 px-4 md:px-6 relative overflow-hidden">
       <div className="page-ambient" />
       
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-24">
+        <div className="text-center mb-16 md:mb-24">
           <motion.h1 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-black mb-8 tracking-tight"
+            className="text-3xl sm:text-5xl md:text-7xl font-black mb-6 md:mb-8 tracking-tight"
           >
             Project <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] bg-clip-text text-transparent">Slides</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-[var(--muted)] text-xl max-w-2xl mx-auto"
+            className="text-base md:text-xl text-[var(--muted)] max-w-2xl mx-auto leading-relaxed"
           >
             Review our academic progress through official presentation slides and research documentation.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 md:gap-y-20">
           {presentations.map((p, index) => (
             <motion.div
               key={`${p.event}-${index}`}
@@ -84,18 +84,18 @@ export default function PresentationPage() {
                 rel="noopener noreferrer"
                 className={p.thumbnail === 'loading' ? 'pointer-events-none' : ''}
               >
-                <div className="relative mb-10">
+                <div className="relative mb-6 md:mb-10">
                   {/* Physical Slide Border Design */}
-                  <div className="aspect-[16/10] bg-white p-3 md:p-5 rounded-xl shadow-[0_30px_80px_-15px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_-15px_rgba(0,0,0,0.4)] group-hover:scale-[1.02] transition-all duration-500 relative overflow-hidden border border-[var(--border)]/20">
+                  <div className="aspect-[16/10] bg-white p-2 md:p-5 rounded-xl shadow-[0_30px_80px_-15px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_-15px_rgba(0,0,0,0.4)] group-hover:scale-[1.02] transition-all duration-500 relative overflow-hidden border border-[var(--border)]/20">
                     {p.thumbnail === 'loading' ? (
-                      <div className="w-full h-full bg-slate-50 dark:bg-slate-900/50 flex flex-col items-center justify-center gap-6 rounded-lg border border-dashed border-[var(--border)]">
+                      <div className="w-full h-full bg-slate-50 dark:bg-slate-900/50 flex flex-col items-center justify-center gap-4 md:gap-6 rounded-lg border border-dashed border-[var(--border)]">
                         <div className="relative">
-                          <Loader2 className="w-16 h-16 text-[var(--accent)] animate-spin opacity-30" />
+                          <Loader2 className="w-10 h-10 md:w-16 md:h-16 text-[var(--accent)] animate-spin opacity-30" />
                           <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-3 h-3 bg-[var(--accent)] rounded-full animate-pulse" />
+                            <div className="w-2 h-2 md:w-3 md:h-3 bg-[var(--accent)] rounded-full animate-pulse" />
                           </div>
                         </div>
-                        <span className="text-xs font-black uppercase tracking-[0.4em] text-[var(--muted)]">Preparation Stage</span>
+                        <span className="text-[8px] md:text-xs font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[var(--muted)] text-center">Preparation Stage</span>
                       </div>
                     ) : (
                       <img 
@@ -107,24 +107,24 @@ export default function PresentationPage() {
                   </div>
                   
                   {/* Floating Event Tag */}
-                  <div className="absolute -top-4 -left-4 px-6 py-2.5 bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] text-white font-black text-[10px] uppercase tracking-widest rounded-full shadow-2xl shadow-blue-500/40 z-20">
+                  <div className="absolute -top-3 -left-3 md:-top-4 md:-left-4 px-4 md:px-6 py-1.5 md:py-2.5 bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] text-white font-black text-[8px] md:text-[10px] uppercase tracking-widest rounded-full shadow-2xl shadow-blue-500/40 z-20">
                     {p.event}
                   </div>
                 </div>
 
                 <div className="px-2">
-                  <h2 className="text-3xl font-black mb-6 group-hover:text-[var(--accent)] transition-colors leading-tight tracking-tight">
+                  <h2 className="text-xl md:text-3xl font-black mb-4 md:mb-6 group-hover:text-[var(--accent)] transition-colors leading-tight tracking-tight">
                     {p.title}
                   </h2>
 
-                  <div className="flex flex-wrap items-center gap-6 text-[10px] text-[var(--muted)] font-black mb-8 uppercase tracking-widest">
-                    <span className="flex items-center gap-2"><Calendar className="w-4 h-4 text-[var(--accent)]" /> {p.date}</span>
-                    <span className="flex items-center gap-2"><Users className="w-4 h-4 text-[var(--accent)]" /> {p.author}</span>
+                  <div className="flex flex-wrap items-center gap-4 md:gap-6 text-[8px] md:text-[10px] text-[var(--muted)] font-black mb-6 md:mb-8 uppercase tracking-widest">
+                    <span className="flex items-center gap-1.5 md:gap-2"><Calendar className="w-3.5 h-3.5 md:w-4 md:h-4 text-[var(--accent)]" /> {p.date}</span>
+                    <span className="flex items-center gap-1.5 md:gap-2"><Users className="w-3.5 h-3.5 md:w-4 md:h-4 text-[var(--accent)]" /> {p.author}</span>
                   </div>
 
                   {p.thumbnail !== 'loading' && (
-                    <div className="flex items-center gap-3 text-[var(--accent)] font-black uppercase text-[10px] tracking-[0.3em] hover:tracking-[0.4em] transition-all group/btn">
-                      Explore Presentation <ExternalLink className="w-4 h-4 group-hover/btn:-translate-y-1 group-hover/btn:translate-x-1 transition-transform" />
+                    <div className="flex items-center gap-2 md:gap-3 text-[var(--accent)] font-black uppercase text-[8px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] hover:tracking-[0.4em] transition-all group/btn">
+                      Explore Presentation <ExternalLink className="w-3.5 h-3.5 md:w-4 md:h-4 group-hover/btn:-translate-y-1 group-hover/btn:translate-x-1 transition-transform" />
                     </div>
                   )}
                 </div>
@@ -137,12 +137,12 @@ export default function PresentationPage() {
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          className="mt-40 p-20 rounded-[4rem] bg-[var(--panel)] border border-[var(--border)] relative overflow-hidden text-center group"
+          className="mt-24 md:mt-40 p-8 md:p-20 rounded-[2rem] md:rounded-[4rem] bg-[var(--panel)] border border-[var(--border)] relative overflow-hidden text-center group"
         >
           <div className="absolute inset-0 bg-gradient-to-b from-[var(--accent)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-          <Presentation className="w-12 h-12 mx-auto mb-10 text-[var(--accent)] opacity-30 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500" />
-          <h3 className="text-4xl font-black mb-6 tracking-tight">Technical Slide Archive</h3>
-          <p className="text-[var(--muted)] text-xl max-w-2xl mx-auto leading-relaxed font-medium">
+          <Presentation className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-6 md:mb-10 text-[var(--accent)] opacity-30 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500" />
+          <h3 className="text-2xl md:text-4xl font-black mb-4 md:mb-6 tracking-tight">Technical Slide Archive</h3>
+          <p className="text-sm md:text-xl text-[var(--muted)] max-w-2xl mx-auto leading-relaxed font-medium">
             Permanent institutional record of our research methodology, data architecture, and machine learning models.
           </p>
         </motion.div>
@@ -150,3 +150,4 @@ export default function PresentationPage() {
     </div>
   );
 }
+

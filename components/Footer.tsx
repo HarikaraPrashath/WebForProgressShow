@@ -8,12 +8,16 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.5fr_1fr_1fr]">
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[var(--accent)] text-white font-bold text-sm">
-                ML
-              </span>
-              <div className="text-2xl font-bold bg-gradient-to-r from-[var(--ink)] to-[var(--accent-2)] bg-clip-text text-transparent">
-                CareerAI
+              <div className="h-10 w-10 rounded-xl overflow-hidden shadow-md shadow-blue-500/20 bg-white">
+                <img
+                  src="/logo.png"
+                  alt="Mentora Logo"
+                  className="h-full w-full object-cover"
+                />
               </div>
+              <span className="bg-gradient-to-r from-[var(--ink)] to-[var(--accent-2)] bg-clip-text text-transparent font-bold text-xl">
+                Mentora
+              </span>
             </div>
             <p className="max-w-sm text-sm text-[var(--muted)] leading-relaxed">
               Intelligent career path recommendations using machine learning. 

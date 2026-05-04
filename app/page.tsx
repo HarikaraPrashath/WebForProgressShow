@@ -22,8 +22,8 @@ export default function Home() {
       iconColor: "text-blue-500"
     },
     {
-      title: "MLP Based Career Assistance for Students",
-      description: "Multi-Layer Perceptron neural networks driven career matching based on comprehensive skill assessment.",
+      title: "Market Trend Analysis for IT Students",
+      description: "Skill and Trend Analysis of IT skill in the Job Market using to guide students towards in-demand careers.",
       icon: <Target className="w-6 h-6" />,
       color: "from-purple-500/20 to-pink-500/20",
       iconColor: "text-purple-500"
